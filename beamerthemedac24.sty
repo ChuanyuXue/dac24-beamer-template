@@ -1,0 +1,75 @@
+
+% Author: <Chuanyu> (skewcy@gmail.com)
+% dac24.sty (c) 2024
+% Desc: description
+% Created:  2024-05-29T04:30:32.006Z
+
+
+\mode<presentation>
+
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{fontspec}
+\usepackage{etoolbox}
+\usepackage{setspace}
+
+\usefonttheme{serif}
+
+\newfontfamily\dacfont[
+  Path = ./font/static/,
+  UprightFont = *-Regular.ttf,
+  BoldFont = *-SemiBold.ttf
+]{LibreFranklin}
+
+\setmainfont[
+  Path = ./font/static/,
+  UprightFont = *-Regular.ttf,
+  BoldFont = *-SemiBold.ttf
+]{LibreFranklin}[Scale=1.4]
+
+\setbeamercolor{author}{fg=black}
+\setbeamerfont{author}{size=\fontsize{10pt}{10}\selectfont,series=\dacfont}
+\setbeamercolor{title}{fg=black}
+\setbeamerfont{title}{size=\fontsize{17pt}{10}\selectfont,series=\bfseries\dacfont}
+\setbeamercolor{frametitle}{fg=black}
+\setbeamerfont{frametitle}{size=\fontsize{17pt}{10}\selectfont,series=\bfseries\dacfont}
+
+\setbeamertemplate{itemize item}{\textbullet}
+\setbeamertemplate{itemize subitem}{\textbullet}
+\setbeamertemplate{itemize subsubitem}{\textbullet}
+\setbeamercolor{itemize item}{fg=blue}
+\setbeamercolor{itemize subitem}{fg=orange}
+\setbeamercolor{itemize subsubitem}{fg=green}
+
+\defbeamertemplate*{title page}{customized}[1][]
+{
+  \usebackgroundtemplate{\includegraphics[width=\paperwidth]{static/background2.pdf}}
+  \begin{frame}
+    \begin{tikzpicture}[remember picture, overlay]
+      \draw (current page.south west) +(.3, 3.5) node[anchor=south west, text width=15cm] {\begin{minipage}{15cm}
+        \setstretch{2} % Adjust this value to control the gap between lines
+        \usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle
+      \end{minipage}};
+      \draw (current page.south west) +(.35, 2.2) node[anchor=south west, text width=15cm] {\begin{minipage}{15cm}
+        \setstretch{1.5} % Adjust this value to control the gap between lines
+        \usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor
+      \end{minipage}};
+    \end{tikzpicture}
+  \end{frame}
+}
+
+\setbeamertemplate{frametitle}
+{
+  \vskip-0.5em
+  \begin{beamercolorbox}[wd=\paperwidth,ht=2.5em,dp=1ex,leftskip=0.4cm,rightskip=0.3cm]{frametitle}
+    \usebeamerfont{frametitle}\insertframetitle
+  \end{beamercolorbox}
+}
+
+\setbeamertemplate{footline}{
+  \vspace{0.7cm}
+}
+
+\setbeamersize{text margin left=1cm, text margin right=1cm}
+
+\mode<all>

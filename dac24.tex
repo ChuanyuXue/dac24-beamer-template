@@ -1,0 +1,52 @@
+% !TEX program = xelatex
+
+% Author: <Chuanyu> (skewcy@gmail.com)
+% test.tex (c) 2024
+% Desc: description
+% Created:  2024-05-28T12:14:47.904Z
+
+\documentclass[aspectratio=169]{beamer}
+
+\usetheme{dac24}
+
+\title{DAC2024\\Beamer\\Template}
+\author{\textbf{Skewcy}\\Hogwarts School}
+
+\begin{document}
+
+%% Static cover page
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{static/background1.pdf}}
+\begin{frame}
+\end{frame}
+}
+
+{
+\titlepage
+}
+
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{static/background3.pdf}}
+
+%% Example content page
+\begin{frame}{Slide Title}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            Test
+            \begin{itemize}
+                \item Level 1
+                      \begin{itemize}
+                          \item Level 2
+                                \begin{itemize}
+                                    \item Level 3
+                                \end{itemize}
+                      \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \includegraphics[height=5cm]{Untitled.tiff.pdf}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\end{document}
+
